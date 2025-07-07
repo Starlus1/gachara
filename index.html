@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="style.css">
+<!--FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Gachara</title>
+</head>
+
+<body>
+<div data-scroll-container>
+    <section class="section-1" data-scroll-section>
+        <div class="con1">
+            <img src="logo.png" alt="logo" class="logo">
+            <div class="logoname">Gachara</div>
+        </div>
+
+        <div class="con2">
+            <div class="about"><h1>ABOUT</h1></div>
+
+            <div class="xplo">
+                <h1>EXPLORE <span class="triangle">&#9660;</span></h1>
+                <div class="dropdown-menu">
+                    <a href="#">Pricing</a>
+                    <a href="#">Team</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+
+            <div class="lang">
+                <h1>
+                    <span class="lang-select">EN</span>
+                    <img src="uk-flag.png" alt="UK" class="flag">
+                    <span class="triangle lang-triangle">&#9660;</span>
+                </h1>
+            <div class="dropdown-menu lang-menu">
+                <a href="#">VI <img src="vietnam-flag.png" alt="VI" class="flag"></a>
+            </div>
+            </div>
+        </div>
+        
+        <div class="title">
+            <h2>Learn more about<br>gacha games</h2>
+        </div>
+
+        <div class="scroll-indicator">
+            <p>Scroll to explore</p>
+            <div class="arrow"></div>
+        </div>
+        
+    </section>
+
+    <section 
+        class="section-2" 
+        data-scroll
+        data-scroll-call="passed-section-2"
+        data-scroll-repeat="false"
+        data-scroll-section>
+            <div 
+            class="wrap"
+            data-scroll>
+                <div class="vline"></div>
+                <div class="purpose"><h1>PURPOSE</h1></div>
+                <div class="introduction">
+                    <p>This project aims to raise awareness of students about gacha games and the danger behind it with a bunch of stuff to talk about so im just yapping here so i can calculate how much the paragraph will take up space afterwards thank you</p>
+                </div>
+            </div>
+    </section>
+
+    <section class="section-3" id="section-3" data-scroll-section>
+        <div 
+        class="catalogue" 
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target=".section-3">
+            <div id="def">
+                <h1>WHAT ARE GACHA GAMES?</h1>
+                <p id="p-def">Gacha games are a type of video game that features a "gacha" mechanic, inspired by Japanese capsule toy vending machines. In these games, players spend in-game currency or real money to receive a random virtual item with extremely low chance. Players can get these types of items as shown in the right side of your screen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-4" data-scroll-section>
+    </section>
+</div>
+
+    <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
