@@ -111,7 +111,7 @@ h1{
 
 /*SECTION 2*/
 .section-2{
-  height: 75svh !important;
+  height: 100svh !important;
   position: relative;
   background-color:rgb(204, 210, 216); ;}
 .vline {
@@ -161,7 +161,7 @@ h1{
 /*SCETION 3*/
 .section-3{
   position: relative;
-  height: 500svh !important;}
+  height: 525svh !important;}
 #def{
   margin-top: 30svh;
   margin-left: 10vw;}
@@ -183,12 +183,46 @@ h1{
   width: 35vw;
   text-align: justify;
   font-size: 1.1rem;}
-
 .section-3 h2{
   font-weight: 400}
+.gacha-pic{
+  width: 35svw;
+  height: 70svh;
+  margin-top: -50svh;
+  margin-left: 55svw;
+  display: flex;             
+  align-items: center;       
+  overflow:hidden;
+  position: relative;}
 
+.lenchar, .lenwe, .lenitem, .lenban{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  font-family: 'Spectral SC';
+  font-size: 1.2rem;}
+#lenchar, #lenitem, #lenban{width:25svw;}
+#lenwe{height:25svw}
+.lenchar h2{  
+  text-shadow: 0 0 8px #aeb5ff, 0 0 16px #796fff;
+  color: #3a4896;}
+.lenwe h2{
+  text-shadow: 0 0 8px #ffaeae, 0 0 16px #ff6f6f;
+  color: #963a3a;}
+.lenitem h2{
+  text-shadow: 0 0 8px #d5ffae, 0 0 16px #b5ff6f;
+  color: #59963a;}
+.lenban h2{
+  text-shadow: 0 0 8px #e0aeff, 0 0 16px #d46fff;
+  color: #963a90;}
 
-
+.scroll-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8svw;
+  width: max-content;}
 
 
 
