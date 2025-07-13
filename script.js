@@ -46,5 +46,22 @@ setupDropdown('.lang', '.lang-menu');
 
 
 
+document.getElementById("sec4").addEventListener("click", function () {
+  const offset = window.innerHeight * 0.05; // 5svh
+
+  scroll.scrollTo(document.querySelector(".section-4"), {
+    offset: offset,
+    duration: 800,
+    easing: [0.25, 0.0, 0.35, 1.0]
+  });
+});
+
+
+
+function showContent(id) {
+  document.querySelectorAll('.content-box').forEach(box => box.classList.add('hidden'));
+  const content = document.getElementById(`content-${id}`);
+  if (content) content.classList.remove('hidden');
+}
 
 

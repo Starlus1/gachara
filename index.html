@@ -27,7 +27,7 @@
             <div class="xplo">
                 <h1>EXPLORE <span class="triangle">&#9660;</span></h1>
                 <div class="dropdown-menu">
-                    <a href="#">Pricing</a>
+                    <a href="#" id="sec4">Pricing</a>
                     <a href="#">Team</a>
                     <a href="#">Contact</a>
                 </div>
@@ -88,7 +88,7 @@
                     Powerful or rare items usually have a 
                     <strong>very low drop rate</strong>. To draw gacha, players can use 
                     <strong>in-game currency</strong> or <strong>real money</strong>. 
-                    <strong>Scroll down</strong> to see examples of 
+                    <strong>Scroll</strong> to see examples of 
                     <em>rewards</em> players might receive.</p>
             </div>
         <div class="gacha-pic">
@@ -97,7 +97,7 @@
                 data-scroll
                 data-scroll-direction="horizontal"
                 data-scroll-speed="7"
-                data-scroll-offset="30%,-325%"
+                data-scroll-offset="30%,-340%"
                 data-scroll-repeat="false">
                 <div style="  
                     display:flex;
@@ -115,9 +115,76 @@
     </section>
 
     <section class="section-4" data-scroll-section>
+
+    <div class="pogame"
+      data-scroll
+      data-scroll-direction="horizontal"
+      data-scroll-speed="-4">
+        <h1>Popular games</h1>
+    </div>
+
+    <div class="container">
+    <div class="left-column">
+
+      <div class="text-box box-blue" onclick="showContent(1)">
+        <div class="highlight-bar"></div>
+        <h3 class="box-title">Genshin Impact</h3>
+        <div class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+      <div class="text-box box-purple" onclick="showContent(2)">
+        <div class="highlight-bar"></div>
+            <h3 class="box-title">Honkai: Star Rail</h3>
+        <div class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+      <div class="text-box box-green" onclick="showContent(3)">
+        <div class="highlight-bar"></div>
+            <h3 class="box-title">Wuthering Waves</h3>
+            
+        <div class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="content-box box-blue hidden" id="content-1">
+        <div class="title-row">
+          <img src="genshin.png" alt="Genshin Impact" class="app">
+          <h2 class="content-title">Genshin Impact</h2>
+        </div>
+        <p class="content-text">Genshin Impact is an expansive open-world action RPG developed by HoYoverse. Set in the visually stunning fantasy world of Teyvat, players take on the role of the Traveler, with a quest of reunite with their lost sibling while uncovering the secrets of elemental gods. Having a rich storyline, diverse characters, and dynamic combat, Genshin Impact offers an immersive experience to players.</p>
+        <img src="genshinreview.jpg" alt="Creative" class="content-image" />
+      </div>
+      <div class="content-box box-purple hidden" id="content-2">
+        <div class="title-row">
+          <img src="HonkaiST.png" alt="HonkaiST" class="app">
+          <h2 class="content-title">Honkai: Star Rail</h2>
+        </div>
+        <p class="content-text">Honkai: Star Rail is a space fantasy RPG created by HoYoverse, taking players on a journey aboard the Astral Express. In a universe shaped by Aeons, players explore planets and uncover mysteries while assembling a team of unique characters with unique abilities. Combining sharp dialogue, cinematic storytelling, and turn-based combat, Star Rail gives players an unforgettable sci-fi adventure.</p>
+        <img src="honkaistreview.jpg" alt="Technology" class="content-image" />
+      </div>
+      <div class="content-box box-green hidden" id="content-3">
+        <div class="title-row">
+          <img src="Wuthering.webp" alt="Wuthering" class="app">
+          <h2 class="content-title">Wuthering Waves</h2>
+        </div>
+        <p class="content-text">Wuthering Waves is a open-world action RPG developed by Kuro Games. Set in a post-apocalyptic world where humanity fights to reclaim its past, players take on the role of a mysterious warrior awakened from slumber called Rover. With fluid combat mechanics, parkour exploration, and a deep lore, Wuthering Waves blends action with emotional storytelling in a world teeming with both beauty and ruin.</p>
+        <img src="wutheringreview.jpg" alt="Design" class="content-image" />
+      </div>
+    </div>
+  </div>
     </section>
 </div>
-
     <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="script.js"></script>
 </body>
