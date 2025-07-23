@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trigger Animations on Scroll</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Nunito+Sans&family=Raleway:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #dbe5ef;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* Title */
+    h1.addict-title {
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      font-size: 2.5rem;
+      padding: 2rem 0;
+      opacity: 0.5;
+      transform: translateY(50vh);
+      animation: none;
+    }
+
+    /* Boxes */
+    .addict-box {
+      background: linear-gradient(135deg, #ffffff, #f0f4f9);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(40px);
+      opacity: 0;
+      animation: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .addict-box:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .addict-box h2 {
+      font-family: 'Lexend Deca', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .addict-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .addict-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .addict-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      min-width: 300px;
+    }
+
+    @keyframes addict-floatTitle {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes addict-fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .addict-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dummy content above -->
+  <div style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <p>Scroll down to see the animation start</p>
+  </div>
+
+  <!-- Main content (section-5) -->
+  <section id="section-5">
+    <h1 class="addict-title">WHY IS IT SO ADDICTIVE?</h1>
+    <div class="addict-container">
+      <div class="addict-column">
+        <div class="addict-box">
+          <h2>Variable Rewards</h2>
+          <p>You never know what you'll get. The thrill of chance causes dopamine spikes, like gambling, which hooks the brain deeply.</p>
+        </div>
+        <div class="addict-box">
+          <h2>Sunk Cost Fallacy</h2>
+          <p>Players keep pulling because they've already invested time or money. Quitting feels like wasting everything already spent.</p>
+        </div>
+      </div>
+      <div class="addict-column">
+        <div class="addict-box">
+          <h2>FOMO (Fear of Missing Out)</h2>
+          <p>Limited banners and exclusive units create urgency. Missing them triggers anxiety and encourages impulsive spending.</p>
+        </div>
+        <div class="addict-box">
+          <h2>Emotional Attachment</h2>
+          <p>Beautiful designs and stories make players fall in love with characters, making it emotionally hard to skip a banner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const title = document.querySelector('.addict-title');
+          const boxes = document.querySelectorAll('.addict-box');
+
+          // Animate title
+          title.style.animation = 'addict-floatTitle 1.6s cubic-bezier(0.65, -0.15, 0.2, 1.6) forwards';
+
+          // Animate each box with delay
+          boxes.forEach((box, i) => {
+            box.style.animation = `addict-fadeUp 1s ease-out forwards`;
+            box.style.animationDelay = `${0.5 + i * 0.5}s`;
+          });
+
+          observer.disconnect(); // Only play once
+        }
+      });
+    }, { threshold: 0.4 });
+
+    observer.observe(document.querySelector('#section-5'));
+  </script>
+
+</body>
+</html>

@@ -1,13 +1,42 @@
 section {
     height: 100svh;
     display: flex;
-    background-color: rgb(219, 227, 236);}
+    background:rgb(219,227,236);}
 html, body {
   margin:0;
   padding: 0;
   scroll-behavior: smooth;}
+#mobile-warning {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;}
+body.no-scroll {
+  overflow: hidden;}
 
 /*SECTION 1*/
+.section-1 {
+  position: relative;
+  width: 100vw;
+  background-image: url('helpme.png');
+  background-size: contain;
+  background-position: bottom 75px;
+  background-repeat: no-repeat;
+  overflow: hidden;}
+
+
 .logoname{
     font-size: 1.9rem;
     text-align: left;
@@ -22,13 +51,14 @@ html, body {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 20px;
+  padding-top: 15px;
+  padding-left: 15px;
   position: absolute;}
 .con2 {
   display: flex;
   align-items: center;
   gap: 30px;
-  padding: 20px;
+  padding-top: 12px;
   position: absolute;
   right:20px;}
 
@@ -64,10 +94,21 @@ h1{
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 3px;}
+@keyframes con2show {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+#about, #xplo, #lang {
+  opacity: 0;}
 
 .title{
   position: absolute;
-  top:45%;
+  top:40%;
   left:50%;
   transform: translate(-50%,-50%);
   font-family: 'Raleway';
@@ -76,7 +117,64 @@ h1{
   text-align: center;
   min-width: 200px;
   width:800px;
-  line-height: 1.2;}
+  line-height: 1.2;
+  opacity: 0;
+  filter: blur(8px);
+  animation: titleshow 0.8s ease-out forwards;
+  animation-delay: 0.1s;}
+.title.show {
+  opacity: 1;
+  filter: blur(0);}
+
+@keyframes titleshow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%); /* lower starting point */
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* final centered position */
+    filter: blur(0);
+  }}
+
+@keyframes scrollRight {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}}
+.card-move {
+  width: 100%;
+  overflow: hidden;
+  margin-top:60svh;
+  animation: slideInFromRight 1s ease-out forwards;}
+@keyframes cardshow {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }}
+
+.card-wrapper{
+  display: flex;
+  width: max-content;
+  animation: scrollRight 25s linear infinite;}
+.card{
+  height: 6rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, z-index 0.2s;
+  position: relative;
+  margin-left: 1rem;
+  object-fit: cover;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;}
+.card:hover{
+  opacity: 0.7;
+  z-index: 10;}
+
+
 
   /*SCROLL*/
 .scroll-indicator {
@@ -120,25 +218,46 @@ h1{
   background-color: black;
   margin: 5% 50px;
   position: absolute;}
-.introduction{
+
+#purpose {
+  transform: translateY(300px);
+  opacity: 0.5;}
+#introduction {
+  transform: translateY(100px);
+  opacity: 0.5;}
+@keyframes purpose {
+  from {
+    transform: translateY(300px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }}
+@keyframes intro {
+  from {
+    transform: translateY(100px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }}
+.purpose {
+  display: flex;
+  padding-top: 10svh;
+  justify-content: center;
+  width: fit-content;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;}
+.introduction {
   font-family: 'Nunito Sans';
   font-size: 1.2rem;
   text-align: justify;
   margin: 0 20vw;
   height: auto;
-  width: auto}
-
-.catalogue h1{
-  display: flex;
-  justify-content: space-between;
-  max-width: fit-content;
-  font-family: 'Raleway';
-  font-weight: 700;
-  font-size: 2rem;
-  border-bottom: 1px solid black;}
-.catalogue{
-  position: relative;
-  height: fit-content;}
+  width: auto;}
 
 .wrap{
   position: absolute;}
@@ -147,21 +266,14 @@ h1{
   height: 100%;}
 .section-2 h1{
   font-family: 'Raleway';
-  font-size: 2rem;
-  font-weight: 650;}
-.purpose{
-  display: flex;
-  padding-top: 10svh;
-  justify-content: center;
-  width: fit-content;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;}
+  font-size: 2.5rem;
+  font-weight: 700;}
 
 /*SCETION 3*/
 .section-3{
   position: relative;
-  height: 525svh !important;}
+  height: 525svh !important;
+background: linear-gradient(to right, #c0d5ed, #e5e9ef);}
 #def{
   margin-top: 30svh;
   margin-left: 10vw;}
@@ -176,6 +288,26 @@ h1{
 .catalogue{
   position: relative;
   height: fit-content;}
+
+#head-def, #p-def {
+  opacity: 0;}
+
+.reveal {
+  animation: wipeReveal 0.7s ease-out forwards;}
+.reveal-delay {
+  animation: wipeReveal 0.7s ease-out forwards;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;}
+@keyframes wipeReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.3;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }}
+
 
 #def p{
   font-family: 'Nunito Sans';
@@ -227,9 +359,12 @@ h1{
 
 /*SECTION 4*/
 .section-4{
-  height: 300svh;
-  width: 100%;}
+  height: 150svh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(to right, #c0d5ed, #e5e9ef);}
 .pogame{
+  position: absolute;
   margin-top: 22svh;
   display: flex;
   justify-content: center;
@@ -256,7 +391,7 @@ h1{
 /* Layout */
 .container {
   padding-top: 40svh;
-  margin-left: -35svw;
+  margin-left: 4rem;
   max-width: 72rem;
   width: 100%;
   display: flex;
@@ -408,6 +543,76 @@ h1{
   opacity: 1 !important;}
 .hidden {
   display: none;}
+
+/*SECTION 5*/
+.section-5{
+  height: 125svh;
+  width: 100%;
+  position: relative;}
+
+.addict-title {
+  height: max-content;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 2rem 0;
+  opacity: 0.5;
+  font-weight: 600;
+  transform: translateY(50vh);
+  animation: none;
+  width: 30%;}
+.addict-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;}
+.addict-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 300px;}
+
+.addict-box {
+  background: linear-gradient(135deg, #ffffff, #f0f4f9);
+  padding: 1.5rem;
+  border: 4px double #8da2ae;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(40px) scale(1);
+  opacity: 0;
+  animation: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;}
+.addict-inner {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;}
+.addict-subtitle {
+  font-family: 'Lexend Deca';
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;}
+.addict-content {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;}
+
+.addict-box.animated {
+  transform: translateY(0) scale(1);
+  opacity: 1;}
+.addict-box.animated:hover {
+  transform: translateY(0) scale(1.05); /* or 1.1 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;}
+
+@keyframes addict-floatTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+@media (max-width: 768px) {
+  .addict-container {
+    flex-direction: column;
+    align-items: center;
+  }}
 
 
 

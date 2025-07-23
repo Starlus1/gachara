@@ -13,39 +13,48 @@
     <title>Gachara</title>
 </head>
 
-<body>
-<div data-scroll-container>
+<body> 
+  
+<div id="mobile-warning">
+  ⚠️ Please use a laptop or PC browser for the best performance.
+</div>
+
+<div data-scroll-container id="content">
     <section class="section-1" data-scroll-section>
+        <div class="header"></div>
         <div class="con1">
             <img src="logo.png" alt="logo" class="logo">
             <div class="logoname">Gachara</div>
         </div>
-
         <div class="con2">
-            <div class="about"><h1>ABOUT</h1></div>
+          <div class="about" id="about">
+            <h1>ABOUT</h1>
+          </div>
 
-            <div class="xplo">
-                <h1>EXPLORE <span class="triangle">&#9660;</span></h1>
-                <div class="dropdown-menu">
-                    <a href="#" id="sec4">Pricing</a>
-                    <a href="#">Team</a>
-                    <a href="#">Contact</a>
-                </div>
+          <div class="xplo" id="xplo">
+            <h1>EXPLORE <span class="triangle">&#9660;</span></h1>
+            <div class="dropdown-menu">
+              <a href="#" id="sec4">Pricing</a>
+              <a href="#">Team</a>
+              <a href="#">Contact</a>
             </div>
+          </div>
 
-            <div class="lang">
-                <h1>
-                    <span class="lang-select">EN</span>
-                    <img src="uk-flag.png" alt="UK" class="flag">
-                    <span class="triangle lang-triangle">&#9660;</span>
-                </h1>
+          <div class="lang" id="lang">
+            <h1>
+              <span class="lang-select">EN</span>
+              <img src="uk-flag.png" alt="UK" class="flag">
+              <span class="triangle lang-triangle">&#9660;</span>
+            </h1>
             <div class="dropdown-menu lang-menu">
-                <a href="#">VI <img src="vietnam-flag.png" alt="VI" class="flag"></a>
+              <a href="#">VI <img src="vietnam-flag.png" alt="VI" class="flag"></a>
             </div>
-            </div>
+          </div>
         </div>
-        
-        <div class="title">
+
+
+
+        <div class="title" id="title">
             <h2>Learn more about<br>gacha games</h2>
         </div>
 
@@ -53,11 +62,40 @@
             <p>Scroll to explore</p>
             <div class="arrow"></div>
         </div>
-        
+        <div class="card-move" id="icons"> 
+          <div class="card-wrapper">
+              <img src="pjsk.png" alt="Gacha Game 1" class="card card1">
+              <img src="HonkaiST.png" alt="Gacha Game 2" class="card card2">
+              <img src="bangdream.webp" alt="Gacha Game 3" class="card card3">
+              <img src="limbuscompany.png" alt="Gacha Game 4" class="card card4">
+              <img src="genshin.png" alt="Gacha Game 5" class="card card5">
+              <img src="honkaiimpact.webp" alt="Gacha Game 6" class="card card6">
+              <img src="arknights.png" alt="Gacha Game 7" class="card card7">
+              <img src="luutruxanh.webp" alt="Gacha Game 8" class="card card8">
+              <img src="fategrand.png" alt="Gacha Game 9" class="card card9">
+              <img src="touhou.png" alt="Gacha Game 10" class="card card10">
+              <img src="azurlane.jpg" alt="Gacha Game 11" class="card card11">
+              <img src="reverse1999.webp" alt="Gacha Game 12" class="card card12">
+
+              <img src="pjsk.png" alt="Gacha Game 1" class="card card1">
+              <img src="HonkaiST.png" alt="Gacha Game 2" class="card card2">
+              <img src="bangdream.webp" alt="Gacha Game 3" class="card card3">
+              <img src="limbuscompany.png" alt="Gacha Game 4" class="card card4">
+              <img src="genshin.png" alt="Gacha Game 5" class="card card5">
+              <img src="honkaiimpact.webp" alt="Gacha Game 6" class="card card6">
+              <img src="arknights.png" alt="Gacha Game 7" class="card card7">
+              <img src="luutruxanh.webp" alt="Gacha Game 8" class="card card8">
+              <img src="fategrand.png" alt="Gacha Game 9" class="card card9">
+              <img src="touhou.png" alt="Gacha Game 10" class="card card10">
+              <img src="azurlane.jpg" alt="Gacha Game 11" class="card card11">
+              <img src="reverse1999.webp" alt="Gacha Game 12" class="card card12">
+          </div>
+        </div> 
+
     </section>
 
     <section 
-        class="section-2" 
+        class="section-2" id="section2"
         data-scroll
         data-scroll-call="passed-section-2"
         data-scroll-repeat="false"
@@ -66,9 +104,9 @@
             class="wrap"
             data-scroll>
                 <div class="vline"></div>
-                <div class="purpose"><h1>PURPOSE</h1></div>
-                <div class="introduction">
-                    <p>This project aims to raise awareness of students about gacha games and the danger behind it with a bunch of stuff to talk about so im just yapping here so i can calculate how much the paragraph will take up space afterwards thank you</p>
+                <div class="purpose" id="purpose"><h1>INTRODUCTION</h1></div>
+                <div class="introduction" id="introduction">
+                  <p>This project aims to raise awareness of students about gacha games and the danger behind it with a bunch of stuff to talk about so im just yapping here so i can calculate how much the paragraph will take up space afterwards thank you</p>
                 </div>
             </div>
     </section>
@@ -80,7 +118,7 @@
         data-scroll-sticky
         data-scroll-target=".section-3">
             <div id="def">
-                <h1>WHAT ARE GACHA GAMES?</h1>
+                <h1 id="head-def">WHAT ARE GACHA GAMES?</h1>
                 <p id="p-def">  
                     <strong>Gacha games</strong> are a type of video game that has a 
                     <strong>random reward system</strong> to get 
@@ -162,7 +200,7 @@
           <img src="genshin.png" alt="Genshin Impact" class="app">
           <h2 class="content-title">Genshin Impact</h2>
         </div>
-        <p class="content-text">Genshin Impact is an expansive open-world action RPG developed by HoYoverse. Set in the visually stunning fantasy world of Teyvat, players take on the role of the Traveler, with a quest of reunite with their lost sibling while uncovering the secrets of elemental gods. Having a rich storyline, diverse characters, and dynamic combat, Genshin Impact offers an immersive experience to players.</p>
+        <p class="content-text"><strong>Genshin Impact</strong> is an expansive open-world action RPG developed by <em>HoYoverse</em>. Set in the visually stunning fantasy world of <em>Teyvat</em>, players take on the role of the <strong>Traveler</strong>, with a quest to reunite with their lost sibling while uncovering the secrets of <em>elemental gods</em>. With a rich storyline, diverse characters, and dynamic combat, <em>Genshin Impact</em> offers an immersive experience to players.</p>
         <img src="genshinreview.jpg" alt="Creative" class="content-image" />
       </div>
       <div class="content-box box-purple hidden" id="content-2">
@@ -170,7 +208,7 @@
           <img src="HonkaiST.png" alt="HonkaiST" class="app">
           <h2 class="content-title">Honkai: Star Rail</h2>
         </div>
-        <p class="content-text">Honkai: Star Rail is a space fantasy RPG created by HoYoverse, taking players on a journey aboard the Astral Express. In a universe shaped by Aeons, players explore planets and uncover mysteries while assembling a team of unique characters with unique abilities. Combining sharp dialogue, cinematic storytelling, and turn-based combat, Star Rail gives players an unforgettable sci-fi adventure.</p>
+        <p class="content-text">  <strong>Honkai: Star Rail</strong> is a space fantasy RPG created by <em>HoYoverse</em>, taking players on a journey aboard the <strong>Astral Express</strong>. In a universe shaped by <em>Aeons</em>, players explore planets and uncover mysteries while assembling a team of unique characters with unique abilities. Combining sharp dialogue, cinematic storytelling, and turn-based combat, <em>Star Rail</em> gives players an unforgettable sci-fi adventure.</p>
         <img src="honkaistreview.jpg" alt="Technology" class="content-image" />
       </div>
       <div class="content-box box-green hidden" id="content-3">
@@ -178,11 +216,53 @@
           <img src="Wuthering.webp" alt="Wuthering" class="app">
           <h2 class="content-title">Wuthering Waves</h2>
         </div>
-        <p class="content-text">Wuthering Waves is a open-world action RPG developed by Kuro Games. Set in a post-apocalyptic world where humanity fights to reclaim its past, players take on the role of a mysterious warrior awakened from slumber called Rover. With fluid combat mechanics, parkour exploration, and a deep lore, Wuthering Waves blends action with emotional storytelling in a world teeming with both beauty and ruin.</p>
+        <p class="content-text"> <strong>Wuthering Waves</strong> is a open-world action RPG developed by <em>Kuro Games</em>. Set in a post-apocalyptic world where humanity fights to reclaim its past, players take on the role of a mysterious warrior awakened from slumber called <strong>Rover</strong>. With fluid combat mechanics, parkour exploration, and a deep lore, <em>Wuthering Waves</em> blends action with emotional storytelling in a world teeming with both beauty and ruin.</p>
         <img src="wutheringreview.jpg" alt="Design" class="content-image" />
       </div>
     </div>
   </div>
+    </section>
+
+    <section class="section-5" id=section-5 data-scroll-section>
+      <h1 class="addict-title">WHY GACHA GAMES ARE SO ADDICTIVE</h1>
+      <div class="addict-container">
+        <div class="addict-column">
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">Gacha Mechanics</h2>
+              <p class="addict-content">"The next pull is the one that will get me a <strong>legendary</strong>..."</p>
+            </div>
+          </div>
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">Sunk Cost Fallacy</h2>
+              <p class="addict-content">"I've come too far to <em>stop</em> now."<br>"Throwing good money after bad."</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="addict-column">
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">FOMO (Fear of Missing Out)</h2>
+              <p class="addict-content">"Limited-time only!"<br>"I can't get the <strong>limited-item</strong> if the event end..."</p>
+            </div>
+          </div>
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">Emotions Hooks</h2>
+              <p class="addict-content">"So close to getting my favorite <strong>character</strong>!"<br></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </section>
 </div>
     <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
