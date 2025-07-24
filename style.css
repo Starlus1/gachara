@@ -546,14 +546,22 @@ background: linear-gradient(to right, #c0d5ed, #e5e9ef);}
 
 /*SECTION 5*/
 .section-5{
-  height: 125svh;
+  height: 80svh;
   width: 100%;
   position: relative;}
+.addict-title h1{
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+  padding: 2rem 0;
+  font-weight: 600;
+  margin-bottom: auto;
+  margin-top: auto;}
 
 .addict-title {
-  height: max-content;
-  font-family: 'Raleway', sans-serif;
+  height: 80svh;
+  display:flex;
   text-align: center;
+  font-family: 'Raleway';
   font-size: 2.5rem;
   padding: 2rem 0;
   opacity: 0.5;
@@ -614,5 +622,54 @@ background: linear-gradient(to right, #c0d5ed, #e5e9ef);}
     align-items: center;
   }}
 
+.addict-line1 {
+  position: absolute;
+  width: 80%;
+  height: 10%;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  top: 30%;
+  transform: translateY(-50%);
+  left: 15%;}
+.addict-line2 {
+  position: absolute;
+  width: 80%;
+  height: 10%;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  top: 83%;
+  transform: translateY(-50%);
+  left: 15%;}
+@keyframes fadeIn-addict-line {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }}
+.addict-line1,
+.addict-line2 {
+  opacity: 0;}
 
+.addict-line1.animated {
+  animation: fadeIn-addict-line 1s ease 0.4s forwards;}
+.addict-line2.animated {
+  animation: fadeIn-addict-line 1s ease 0.6s forwards;}
 
+/*SECTION 6*/
+  .section-6{
+  height: 100svh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #c0d5ed, #e5e9ef);}
+  .stats-title h1{
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  .stats-title{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5svh;
+  }

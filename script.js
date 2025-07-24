@@ -145,28 +145,35 @@ window.addEventListener('resize', checkScreenSize);
     });
 
   //SECTION 5
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const title = document.querySelector('.addict-title');
-      const boxes = document.querySelectorAll('.addict-box');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const title = document.querySelector('.addict-title');
+          const boxes = document.querySelectorAll('.addict-box');
+          const line1 = document.querySelector('.addict-line1');
+          const line2 = document.querySelector('.addict-line2');
 
-      // Animate title
-      title.style.animation = 'addict-floatTitle 1.6s cubic-bezier(0.65, -0.15, 0.2, 1.6) forwards';
+          // Animate title
+          title.style.animation = 'addict-floatTitle 1.6s cubic-bezier(0.65, -0.15, 0.2, 1.6) forwards';
 
-      // Animate boxes with delay
-      boxes.forEach((box, i) => {
-        setTimeout(() => {
-          box.classList.add('animated');
-        }, i * 200);
+          // Animate boxes
+          boxes.forEach((box, i) => {
+            setTimeout(() => {
+              box.classList.add('animated');
+            }, i * 300);
+          });
+
+          // Animate lines
+          line1.classList.add('animated');
+          line2.classList.add('animated');
+
+          observer.disconnect();
+        }
       });
+    }, { threshold: 0.4 });
 
-      observer.disconnect(); // Only play once
-    }
-  });
-}, { threshold: 0.4 });
+    observer.observe(document.querySelector('#section-5'));
 
-observer.observe(document.querySelector('#section-5'));
 
 
 
