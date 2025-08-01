@@ -63,8 +63,9 @@ body.no-scroll {
   right:20px;}
 
 a{
-  font-family: 'Saira';
-  font-size: 0.9rem;}
+  font-family: 'Raleway';
+  font-size: 1.1rem;
+  font-weight: 600;}
 h1{
     font-family: 'Saira';
     font-weight: 400;
@@ -73,26 +74,48 @@ h1{
   font-size: 0.8em;
   cursor: pointer;}
 
-.dropdown-menu {
-  display: none;
+
+.dropdown-menu,
+.lang-menu {
   position: absolute;
-  background:#f6faff;
-  padding: 5px 5px;
+  right: 0;
+  background: #f6faff;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.139);
-  z-index: 10;}
-.dropdown-menu a {
+  z-index: 10;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;}
+.dropdown-menu.active,
+.lang-menu.active {
+  max-height: 500px;
+  opacity: 1;
+  padding: 13px 10px;
+  pointer-events: auto;}
+
+.dropdown-menu a,
+.lang-menu a {
   display: block;
-  padding: 4px 10px;
+  padding: 7px 0px;
   color: black;
   text-decoration: none;}
-.dropdown-menu a:hover {
+
+.dropdown-menu a:hover,
+.lang-menu a:hover {
   background: #f0f0f0;}
+.xplo-menu {
+  padding-left: 15px;
+  padding-right: 15px;}
+.xplo, .lang, .about{
+  cursor:pointer;}
+
+
 .flag {
   width: 20px;
   height: auto;
   vertical-align: middle;
-  margin-left: 5px;
-  margin-right: 5px;
   border-radius: 3px;}
 @keyframes con2show {
   from {
@@ -268,6 +291,30 @@ h1{
   font-family: 'Raleway';
   font-size: 2.5rem;
   font-weight: 700;}
+
+.ele-img{
+  width:75px;
+  border-radius: 40%;}
+.element1{
+  position: absolute;
+  top:0;
+  left:25%;}
+.element2{
+  position: absolute;
+  top:20%;
+  left:0;}
+.element3{
+  position: absolute;
+  top:15%;
+  right:10%;}
+.element4{
+  position: absolute;
+  top:50%;
+  right: 10%;}
+.element5{
+  position: absolute;
+  top:60%;
+  left: 35%;}
 
 /*SCETION 3*/
 .section-3{
@@ -657,19 +704,198 @@ background: linear-gradient(to right, #c0d5ed, #e5e9ef);}
   animation: fadeIn-addict-line 1s ease 0.6s forwards;}
 
 /*SECTION 6*/
-  .section-6{
-  height: 100svh;
+.section-6 {
+  min-height: 150svh;
   width: 100%;
   position: relative;
-  background: linear-gradient(135deg, #c0d5ed, #e5e9ef);}
-  .stats-title h1{
-    font-family: 'Raleway';
+  background: linear-gradient(135deg, #c0d5ed, #e5e9ef);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5svh 2vw;
+  box-sizing: border-box;}
+
+.stats-title h1 {
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 3svh;
+  text-align: center;}
+.stats-graphs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4svh;}
+
+.graph-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;}
+.graph-container1 {
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  padding: 1rem;
+  box-sizing: border-box;}
+.bar1{
+  width: 350px;
+  height: 300px;
+  border-radius: 12px;
+  padding: 1rem;
+  font-family: 'Nunito Sans';
+  box-sizing: border-box;}
+.graph-container2 {
+  width: 500px;
+  height: 350px;
+  border-radius: 12px;
+  padding: 1rem;
+  box-sizing: border-box;}
+
+  /*SECTION 7*/
+.section-7{
+  height: 70svh;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  background: #e2e9f2;}
+.summary{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: fit-content;}
+.summary h1{
+  font-family: 'Raleway';
+  font-size: 3rem;
+  font-weight: 700;}
+.forms-intro{
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;}
+.sum-des {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  text-align: center;}
+.sum-des > div {
+  width: calc(33.333% - 16px);
+  padding: 20px;
+  border-radius: 12px;}
+.sum-des h2 {
+  font-size: 2rem;
+  color: #231846;
+  margin-bottom: 8px;
+  font-family: 'Lexend Deca';
+  font-weight: 500;
+font-size: 4rem;}
+.sum-des h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #313945;
+  margin: 0;
+  font-family: 'Saira';
+  font-weight: 400;}
+
+  /*SECTION 8*/
+  .section-8{
+  height: 150svh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(-90deg, #c0d5ed, #e5e9ef);}
+
+  header h1 {
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 2rem;
     font-weight: 700;
-    font-size: 2.5rem;
-  }
-  .stats-title{
+    color: #333;
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.solutions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.sol-card {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5svh;
-  }
+    width: 220px;
+    height: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    filter: blur(2px) brightness(0.7);
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sol-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sol-card .label {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+.sol-card:hover {
+    filter: blur(0) brightness(1);
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px var(--hover-color);
+}
+
+.subtitle-container {
+    text-align: center;
+    margin-top: 40px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.solution-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    max-width: 800px;
+    min-height: 150px;
+    background: #f9f9f9;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: opacity 0.3s ease;
+}
+
+
+

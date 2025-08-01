@@ -33,10 +33,12 @@
 
           <div class="xplo" id="xplo">
             <h1>EXPLORE <span class="triangle">&#9660;</span></h1>
-            <div class="dropdown-menu">
-              <a href="#" id="sec4">Pricing</a>
-              <a href="#">Team</a>
-              <a href="#">Contact</a>
+            <div class="dropdown-menu xplo-menu">
+              <a href="#" id="sec4">Introduction</a>
+              <a href="#">Definitions</a>
+              <a href="#">Examples</a>
+              <a href="#">Psychology</a>
+              <a href="#">Statistics</a>
             </div>
           </div>
 
@@ -97,8 +99,6 @@
     <section 
         class="section-2" id="section2"
         data-scroll
-        data-scroll-call="passed-section-2"
-        data-scroll-repeat="false"
         data-scroll-section>
             <div 
             class="wrap"
@@ -106,8 +106,15 @@
                 <div class="vline"></div>
                 <div class="purpose" id="purpose"><h1>INTRODUCTION</h1></div>
                 <div class="introduction" id="introduction">
-                  <p>This project aims to raise awareness of students about gacha games and the danger behind it with a bunch of stuff to talk about so im just yapping here so i can calculate how much the paragraph will take up space afterwards thank you</p>
+                  <p>The goal of the project is to explore the psychology and behavior of high school students when playing gacha games. Based on the results of a recent survey, our team has realised the danger behind of this practice. To sustain a healthy digital environment for students, we have developed <strong>GACHARA</strong>, a website that helps students better understand and become more aware of this type of game.</p>
                 </div>
+            </div>
+            <div class="flow-image">
+              <img src="element1.webp" alt="element1" class="ele-img element1" data-scroll data-scroll-speed="2">
+              <img src="element2.jpg" alt="element2" class="ele-img element2" data-scroll-direction="horizontal" data-scroll data-scroll-speed="-4">
+              <img src="element3.webp" alt="element3" class="ele-img element3" data-scroll data-scroll-speed="6">
+              <img src="element4.webp" alt="element4" class="ele-img element4" data-scroll data-scroll-direction="horizontal" data-scroll-speed="8">
+              <img src="element5.png" alt="element5" class="ele-img element5" data-scroll data-scroll-speed="5">
             </div>
     </section>
 
@@ -272,9 +279,70 @@
       <div class="stats-title">
         <h1>STATISTICS</h1>
       </div>
+      <div class="stats-graphs">
+
+      <div class="stats-graphs">
+        <div class="graph-row">
+          <div class="graph-container1"><canvas id="pie1"></canvas></div>
+          <div class="graph-container1 bar1"><canvas id="bar1"></canvas></div>
+          <div class="graph-container1"><canvas id="pie2"></canvas></div>
+        </div>
+        <div class="graph-row">
+          <div class="graph-container2"><canvas id="bar2"></canvas></div>
+          <div class="graph-container2"><canvas id="pie3"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-7" data-scroll-section>
+      <div class="summary"><h1>SUMMARY</h1></div>
+      <div class="forms-intro">The data above is collected by surveying 180 high school students in Cho Quan ward, HCMC</div>
+      <div class="sum-des">
+        <div class="sum-des-1">
+          <h2>38.9%</h2>
+          <h3>Students playing gacha games <strong>over 3 hours daily</strong></h3>
+        </div>
+        <div class="sum-des-2">
+          <h2>~70.5%</h2>
+          <h3>Students who believe gacha games are designed to be <strong>addictive</strong> also feel <strong>addicted</strong> themselves.</h3>
+        </div>
+        <div class="sum-des-3">
+          <h2>56.8%</h2>
+          <h3>Students experienced <strong>FOMO</strong> when playing gacha games</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-8" data-scroll-section>
+        <div class="solutions">
+            <div class="sol-card" data-solution="personal" data-color="rgba(255,0,0,0.5)">
+                <img src="man.jpg" alt="Cá nhân">
+                <span class="label">Individual</span>
+            </div>
+            <div class="sol-card" data-solution="school" data-color="rgba(0,255,0,0.5)">
+                <img src="friend.jpg" alt="Trường học">
+                <span class="label">School</span>
+            </div>
+            <div class="sol-card" data-solution="family" data-color="rgba(0,0,255,0.5)">
+                <img src="family.jpg" alt="Gia đình">
+                <span class="label">Family</span>
+            </div>
+            <div class="sol-card" data-solution="social" data-color="rgba(255,255,0,0.5)">
+                <img src="social.jpg" alt="Xã hội">
+                <span class="label">Society</span>
+            </div>
+        </div>
+
+        <div class="subtitle-container">
+            <div class="subtitle">SOLUTION</div>
+            <div id="solution-text" class="solution-text">
+                <p>CLICK TO SEE EACH SOLUTION ACCORDINGLY</p>
+            </div>
+        </div>
     </section>
 </div>
     <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 
