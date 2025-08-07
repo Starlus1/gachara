@@ -191,6 +191,29 @@ window.addEventListener('resize', checkScreenSize);
 
     observer.observe(document.querySelector('#section-5'));
 
+  //SECTION 6
+  const section6Observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const title = document.querySelector('.stats-title h1');
+        const graphBoxes = document.querySelectorAll('.graph-row > div');
+
+        // Animate title
+        title.classList.add('animated');
+
+        // Animate graphs with stagger
+        graphBoxes.forEach((box, i) => {
+          setTimeout(() => {
+            box.classList.add('animated');
+          }, i * 300); // 300ms delay between items
+        });
+
+        observer.disconnect(); // only run once
+      }
+    });
+  }, { threshold: 0.4 });
+
+  section6Observer.observe(document.querySelector('#section-6'));
 
   //STATS
 
@@ -437,28 +460,29 @@ Chart.defaults.font.family = 'Nunito Sans';
 
 const solutions = {
     personal: [
-        "Học sinh cần xây dựng nhận thức về mức độ ảnh hưởng của game gacha, đặt giới hạn thời gian chơi mỗi ngày và quản lý tài chính cá nhân hiệu quả. Việc thay thế thói quen chơi game bằng các hoạt động lành mạnh như thể thao, học kỹ năng mới hoặc tham gia câu lạc bộ sẽ giúp giảm sự phụ thuộc. Quan trọng nhất là hình thành động lực nội tại để cân bằng giải trí và học tập."
+        "Students should build awareness of the impact of gacha games, set daily time limits for gameplay, and manage their personal finances effectively. Replacing gaming habits with healthy activities such as sports, learning new skills, or joining clubs can help reduce dependency. Most importantly, developing intrinsic motivation is key to balancing entertainment and academics."
     ],
     school: [
-        "Nhà trường có thể triển khai các chương trình giáo dục về kỹ năng số, giúp học sinh hiểu rõ rủi ro của game gacha và quản lý thời gian online tốt hơn. Hoạt động ngoại khóa như thể thao, nghệ thuật hay nhóm học tập được khuyến khích để tạo môi trường thay thế tích cực. Đồng thời, giáo viên cần phối hợp với phụ huynh để hỗ trợ học sinh giảm dần thời gian chơi game."
+        "Schools can implement digital literacy programs to help students understand the risks of gacha games and manage their online time better. Extracurricular activities like sports, arts, or study groups should be encouraged to create positive alternatives. Additionally, teachers should collaborate with parents to support students in gradually reducing their gaming time."
     ],
     family: [
-        "Gia đình đóng vai trò trung tâm trong việc định hướng và giám sát việc chơi game của con. Cha mẹ cần đồng hành cùng con, thiết lập quy tắc sử dụng thiết bị hợp lý và tạo thói quen sinh hoạt khoa học. Họ có thể cùng con tham gia các hoạt động ngoài trời, giao lưu xã hội để tăng sự gắn kết và hạn chế sự phụ thuộc vào game."
+        "Families play a central role in guiding and monitoring children's gaming habits. Parents should accompany their children, set reasonable device usage rules, and encourage healthy routines. Participating in outdoor activities or social interactions together can strengthen family bonds and reduce reliance on games."
     ],
     social: [
-        "Cộng đồng và cơ quan quản lý cần siết chặt quy định về cơ chế loot box và quản lý các trò chơi gacha nhằm giảm nguy cơ nghiện game. Tổ chức các sân chơi lành mạnh, hội thảo và chiến dịch nâng cao nhận thức sẽ giúp học sinh tiếp cận thông tin chính xác. Xã hội cũng cần xây dựng môi trường giải trí đa dạng, an toàn và hỗ trợ người trẻ lựa chọn tích cực hơn."
+        "Communities and regulatory bodies should tighten rules around loot box mechanisms and regulate gacha games to reduce addiction risks. Organizing healthy recreational spaces, workshops, and awareness campaigns can help students access accurate information. Society should also build diverse, safe entertainment environments to support young people in making more positive choices."
     ]
 };
 
+
 const textEl = document.getElementById("solution-text");
 
-// Hiển thị nội dung mặc định khi tải trang
+
 window.addEventListener("DOMContentLoaded", () => {
-    textEl.innerHTML = "<p>Nhấn vào từng hình để xem giải pháp tương ứng.</p>";
+    textEl.innerHTML = "<p>Click onto each image to see its according solution.</p>";
 });
 
 function showText(text) {
-    if (Array.isArray(text)) text = text[0]; // Nếu là mảng thì lấy phần tử đầu
+    if (Array.isArray(text)) text = text[0];
     textEl.classList.remove("show");
     void textEl.offsetWidth; // reset animation
     textEl.textContent = text;
