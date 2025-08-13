@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Locomotive color change example</title>
+
+  <!-- locomotive css (optional but useful) -->
+  <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css"/>
+
+  <style>
+    /* page layout */
+    html,body { height:100%; margin:0; font-family: Arial, sans-serif; }
+    [data-scroll-container] { overflow:hidden; }
+
+    /* hero just to create enough scroll space */
+    .hero {
+      height:100svh;
+      display:flex; align-items:center; justify-content:center;
+      background:#111;
+      color:white;
+    }
+
+    /* SECTION 2: solid color that will change */
+    .section-2 {
+      height:100svh !important;
+      position:relative;
+      background-color: #fdfcfb;       /* starting solid color */
+      transition: background-color 0.6s cubic-bezier(.4,0,.2,1);
+      display:flex; align-items:center; justify-content:center;
+    }
+    /* color after trigger */
+    .section-2.scrolled {
+      background-color: #ff7300;       /* color after "enter" */
+    }
+
+    /* Extra content style so you can see transition clearly */
+    .section-2 h2 { margin:0; font-size:28px; color:#333; }
+  </style>
+</head>
+<body>
+
+  <!-- Locomotive's scroll container -->
+  <div data-scroll-container>
+
+    <section class="hero" data-scroll-section>
+      <h1>Hero (locomotive scroll active)</h1>
+    </section>
+
+    <!-- section-2: add data-scroll-call which will trigger Locomotive's 'call' event.
+         data-scroll-offset controls WHEN the call triggers (30% down the viewport) -->
+    <section
+      class="section-2"
+      data-scroll-section
+      data-scroll-call="section2"
+      data-scroll-offset="30%">
+      <h2>Section 2 — color will change on scroll</h2>
+    </section>
+
+    <!-- some extra content below so you can scroll past it -->
+    <section style="height:100svh; display:flex;align-items:center;justify-content:center;">
+      <p>More content...</p>
+    </section>
+
+  </div>
+
+  <!-- locomotive script -->
+  <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // init loco
+      const scrollContainer = document.querySelector('[data-scroll-container]');
+      if (!scrollContainer || !window.LocomotiveScroll) {
+        console.error('LocomotiveScroll or scroll container not found.');
+        return;
+      }
+
+      const locoScroll = new LocomotiveScroll({
+        el: scrollContainer,
+        smooth: true,
+        smartphone: { smooth: true },
+        tablet: { smooth: true }
+      });
+
+      // Listen for the "call" event. Signature: (value, way, obj)
+      locoScroll.on('call', (value, way, obj) => {
+        // debug: open console to see events fire
+        console.log('loco call:', { value, way, el: obj && obj.el });
+
+        if (value === 'section2') {
+          const el = obj && obj.el; // the element with data-scroll-call
+          if (!el) return;
+
+          // 'way' is usually "enter" or "leave" (use console.log above to confirm)
+          if (way === 'enter') {
+            el.classList.add('scrolled');
+          } else if (way === 'leave') {
+            el.classList.remove('scrolled');
+          }
+        }
+      });
+
+      // if layout/content changes (images load etc.), call update
+      window.addEventListener('load', () => locoScroll.update());
+      // optional: update on resize
+      window.addEventListener('resize', () => locoScroll.update());
+    });
+  </script>
+</body>
+</html>

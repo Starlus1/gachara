@@ -1,0 +1,237 @@
+<!--
+File: scroll-color-effect.html
+Description: Single-file demo showing a smooth background color/gradient change tied to page scroll.
+How to use: open this file in any modern browser. Scroll to see the background hue shift.
+Features:
+ - Hue-based gradient that changes with scroll position (0 - 360 degrees)
+ - Smooth transitions and optional intensity control
+ - Respects prefers-reduced-motion
+ - Small UI to toggle the effect and tweak intensity
+-->
+
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hiệu Ứng Đổi Màu Khi Cuộn — Hào Quang Lạc Lối Demo</title>
+  
+  <style>
+    :root{
+      /* --hue will be updated by JS (0..360) */
+      --hue: 200;
+      /* intensity controls how far apart the two gradient hues are */
+      --intensity: 40;
+      --saturation: 80%;
+      --lightness-a: 55%;
+      --lightness-b: 40%;
+      --panel-padding: 2rem;
+    }
+
+    /* Basic reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #0b1020;
+      line-height:1.35;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transition: background 300ms linear;
+    }
+
+    /* Page background uses the dynamic hue variable */
+    .page-bg{
+      position:fixed;inset:0;z-index:-1;
+      background: linear-gradient(135deg,
+        hsl(var(--hue) var(--saturation) var(--lightness-a)),
+        hsl(calc(var(--hue) + var(--intensity)) var(--saturation) var(--lightness-b))
+      );
+      transition: background 350ms linear;
+      will-change: background;
+      filter: saturate(1.05);
+    }
+
+    /* Layout: stacked full-height sections */
+    .panel{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:var(--panel-padding)}
+    .card{max-width:900px;width:100%;background:rgba(255,255,255,0.7);backdrop-filter: blur(6px);border-radius:14px;padding:28px;box-shadow:0 8px 30px rgba(11,16,32,0.12)}
+
+    h1{font-size:clamp(1.4rem, 3.5vw, 2.4rem);margin-bottom:0.4rem}
+    p{margin-bottom:0.6rem;color:#111827}
+
+    .controls{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.6rem}
+    .btn{background:#0b1020;color:#fff;padding:0.45rem 0.8rem;border-radius:8px;border:0;cursor:pointer}
+    .toggle{display:inline-flex;align-items:center;gap:0.5rem}
+    input[type=range]{width:180px}
+
+    footer{font-size:0.85rem;color:#111827;opacity:0.85;margin-top:0.6rem}
+
+    /* Small helpful hint in the corner */
+    .hint{position:fixed;right:20px;bottom:20px;background:rgba(255,255,255,0.75);padding:10px 14px;border-radius:10px;box-shadow:0 6px 20px rgba(11,16,32,0.08);font-size:0.89rem}
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .page-bg, body{transition:none}
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:640px){
+      .card{padding:18px;border-radius:12px}
+      .hint{right:12px;bottom:12px;font-size:0.82rem}
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+<body>
+
+  <!-- Dynamic background layer -->
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- Several panels to scroll through -->
+  <section class="panel">
+    <div class="card">
+      <h1>Hào Quang Lạc Lối — Hiệu Ứng Đổi Màu Khi Cuộn</h1>
+      <p>Cuộn trang để xem nền chuyển đổi màu mượt mà dựa trên vị trí cuộn (hue rotation). Dùng thanh <strong>Intensity</strong> để tăng/giảm độ tương phản màu sắc.</p>
+
+      <div class="controls">
+        <div>
+          <label for="intensity">Intensity</label><br>
+          <input id="intensity" type="range" min="10" max="160" value="40">
+        </div>
+
+        <div class="toggle">
+          <label for="enabled">Hiệu ứng bật</label>
+          <input id="enabled" type="checkbox" checked>
+        </div>
+
+        <button id="reset" class="btn">Reset màu</button>
+      </div>
+
+      <footer>Tip: Mở devtools → device toolbar để thử các kích thước màn hình khác nhau.</footer>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="card">
+      <h1>Panel 2 — Thử thách</h1>
+      <p>Mỗi panel đầy đủ chiều cao giúp bạn quan sát hiệu ứng dần thay đổi theo tỉ lệ cuộn.</p>
+      <p>Có thể dùng biến CSS <code>--hue</code> và <code>--intensity</code> để tuỳ chỉnh giao diện.</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="card">
+      <h1>Panel 3 — Tùy biến</h1>
+      <p>Phần này có thể đặt nội dung cốt truyện, trạng thái game hoặc gallery. Nền sẽ tiếp tục cập nhật khi bạn cuộn.</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="card">
+      <h1>Hãy thử cuộn nhanh — và chậm</h1>
+      <p>Nếu trình duyệt hoặc người dùng bật "prefers-reduced-motion", hiệu ứng sẽ tắt để tôn trọng trải nghiệm.</p>
+    </div>
+  </section>
+
+  <div class="hint">Scroll để thay đổi màu • Intensity điều khiển độ tương phản</div>
+
+  <script>
+        const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
+});
+
+scroll.on('scroll', (obj) => {
+  obj.currentElements && Object.values(obj.currentElements).forEach(el => {
+    if (el.el.dataset.color) {
+      document.body.style.backgroundColor = el.el.dataset.color;
+    }
+  });
+});
+    (function(){
+      const root = document.documentElement;
+      const bg = document.querySelector('.page-bg');
+      const intensityControl = document.getElementById('intensity');
+      const enabledToggle = document.getElementById('enabled');
+      const resetBtn = document.getElementById('reset');
+
+      // Respect reduced motion
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduced){
+        enabledToggle.checked = false;
+        enabledToggle.disabled = true;
+      }
+
+      // Helper: set CSS var hue (0..360)
+      function setHue(h){
+        // keep hue in [0,360)
+        const hue = ((Math.round(h) % 360) + 360) % 360;
+        root.style.setProperty('--hue', hue);
+      }
+
+      // Initialize intensity control
+      intensityControl.addEventListener('input', (e)=>{
+        root.style.setProperty('--intensity', e.target.value);
+      });
+
+      // Reset button
+      resetBtn.addEventListener('click', ()=>{
+        intensityControl.value = 40;
+        root.style.setProperty('--intensity', 40);
+        setHue(200);
+      });
+
+      // Toggle enable/disable effect
+      enabledToggle.addEventListener('change', ()=>{
+        if(!enabledToggle.checked){
+          // freeze on current hue
+          bg.style.transition = 'none';
+        } else {
+          bg.style.transition = '';
+        }
+      });
+
+      // Throttle using requestAnimationFrame
+      let ticking = false;
+      function onScroll(){
+        if(!enabledToggle.checked) return;
+        if(ticking) return;
+        ticking = true;
+        requestAnimationFrame(()=>{
+          const scrollTop = window.scrollY || window.pageYOffset;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const fraction = docHeight > 0 ? (scrollTop / docHeight) : 0;
+
+          // Choose a base hue range shift: from 200 -> 560 (wraps via modulo)
+          const hue = fraction * 360; // full hue rotation across page
+
+          setHue(hue);
+          ticking = false;
+        });
+      }
+
+      // Attach scroll listener
+      window.addEventListener('scroll', onScroll, {passive:true});
+
+      // Initialize starting values
+      root.style.setProperty('--intensity', intensityControl.value);
+      setHue(200);
+
+      // For accessibility: allow arrow keys to nudge hue when focus on body
+      window.addEventListener('keydown', (e)=>{
+        if(e.altKey || e.ctrlKey || e.metaKey) return;
+        if(document.activeElement && (document.activeElement.tagName==='INPUT' || document.activeElement.tagName==='TEXTAREA')) return;
+        if(e.key === 'ArrowLeft') setHue(Number(getComputedStyle(root).getPropertyValue('--hue')) - 5);
+        if(e.key === 'ArrowRight') setHue(Number(getComputedStyle(root).getPropertyValue('--hue')) + 5);
+      });
+
+    })();
+
+
+
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+</body>
+</html>
