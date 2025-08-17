@@ -1,0 +1,997 @@
+/* Mobile-Optimized CSS */
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgb(219,227,236);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* SECTION 1 */
+.section-1 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../images/mobilebg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 15px;}
+
+.logoname {
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: 'Lexend Deca';
+    font-weight: 200;
+    display: flex;}
+.logo {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;}
+
+.con1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+  padding-left: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;}
+.con2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  flex-wrap: wrap;}
+
+a {
+  font-family: 'Raleway';
+  font-size: 0.9rem;
+  font-weight: 600;}
+h1 {
+    font-family: 'Saira';
+    font-weight: 400;
+    font-size: 0.8rem;}
+
+.triangle {
+  font-size: 0.7em;
+  cursor: pointer;}
+
+.dropdown-menu,
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #f6faff;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.139);
+  z-index: 10;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  width: 120px;}
+
+.dropdown-menu.active,
+.lang-menu.active {
+  max-height: 300px;
+  opacity: 1;
+  padding: 10px;
+  pointer-events: auto;}
+
+.dropdown-menu a,
+.lang-menu a {
+  display: block;
+  padding: 5px 0;
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;}
+
+.dropdown-menu a:hover,
+.lang-menu a:hover {
+  background: #f0f0f0;}
+
+.xplo, .lang, .about {
+  cursor: pointer;}
+
+.flag {
+  width: 15px;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 2px;}
+
+.title {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  top: 20%;
+  left: 10px;
+  right: 10px;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 1.3;
+  padding: 20px;
+  opacity: 0;
+  animation: titleshow 0.8s ease-out forwards;
+  animation-delay: 0.1s;}
+
+.highlight {
+  background: linear-gradient(90deg, #ff9900, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: 800;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.425);}
+
+@keyframes titleshow {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }}
+
+.game-cards {
+  margin-top:auto ;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 300px;
+  gap: 10px;
+  padding: 0 20px;}
+
+.card {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  opacity: 0;
+  border: 1px solid #2a2a2a;
+  animation: fadeInUp 0.5s ease forwards, cardfloat 4s ease-in-out infinite;
+  transition: transform 0.3s ease;}
+
+.card1 { 
+  animation-delay: 0s, 0.5s; 
+  margin-top: 20px; 
+  margin-left: 0px;}
+.card2 { 
+  animation-delay: 0.1s, 0.6s; 
+  margin-top: 150px; 
+  margin-left: 0px;}
+.card3 { 
+  animation-delay: 0.3s, 0.8s; 
+  margin-top: 40px; 
+  margin-left: 0px;}
+.card4 { 
+  animation-delay: 0.6s, 1.1s; 
+  margin-top: 200px; 
+  margin-left: 0px;}
+.card5 { 
+  animation-delay: 0.7s, 1.2s; 
+  margin-top: 80px; 
+  margin-left: 0px;}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+
+@keyframes cardfloat {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-8px); 
+  }}
+
+.card:hover {
+  transform: scale(1.1);}
+
+.survey-btn {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  padding: 12px 16px;
+  background: #1A2E35;
+  color: white;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 2px outset rgba(0, 0, 0, 0.4);
+  margin-top: 15px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease-in-out;}
+
+.survey-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #00f7c1, #009985);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);}
+
+.title-des {
+  font-family: 'Nunito Sans'; 
+  font-size: 0.9rem;
+  color: rgb(32, 32, 32);
+  font-weight: 400;
+  margin-bottom: 10px;}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+  animation: bounce 2s infinite;
+  font-family: 'Raleway', sans-serif;
+  color: #000000;}
+
+.scroll-indicator p {
+  font-size: 0.9rem;
+  margin: 0 0 8px 0;}
+
+.arrow {
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(-45deg);
+  margin: 0 auto;}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }}
+
+/* SECTION 2 */
+.section-2 {
+  background: linear-gradient(180deg, #f9f6f1 0%, rgb(219,227,236) 100%);
+  padding: 30px 20px;
+min-height: 80svh;}
+
+.vline {
+  width: calc(100% - 20px);
+  height: 0.5px;
+  background-color: black;
+  margin: 20px 0;}
+
+.purpose {
+  text-align: center;
+  margin: 20px 0;}
+
+.purpose h1 {
+  font-family: 'Raleway';
+  font-size: 2rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;}
+
+.introduction {
+  font-family: 'Nunito Sans';
+  font-size: 1rem;
+  text-align: justify;
+  margin: 20px 0;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.3s;}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+
+.flow-image {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;}
+
+.ele-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;}
+
+.element1{
+  position: relative;
+  left:20px;}
+.element2{
+  position: relative;
+  margin-left: auto;
+  margin-right:50px;}
+.element3{
+  position: relative;
+  left:100px;}
+.element4{
+  position: relative;
+  margin-left: auto;
+  margin-right:80px;}
+.element5{
+  position: relative;
+  left:150px;}
+  
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }}
+
+/* SECTION 3 */
+.section-3 {
+  background: linear-gradient(to right, #cfdef0, #e5e9ef);
+  padding: 40px 20px;}
+
+.catalogue h1 {
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 1.8rem;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  margin-bottom: 20px;
+  text-align: center;}
+
+.catalogue p {
+  font-family: 'Nunito Sans';
+  font-weight: 500;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;}
+
+.gacha-rewards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 40px 0;}
+
+.gacha-reward-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: slideInRight 1s ease forwards;}
+
+.gacha-reward-item:nth-child(1) { animation-delay: 0.2s; }
+.gacha-reward-item:nth-child(2) { animation-delay: 0.4s; }
+.gacha-reward-item:nth-child(3) { animation-delay: 0.6s; }
+.gacha-reward-item:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }}
+
+.reward-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;}
+
+.gacha-reward-item h2 {
+  font-family: 'Spectral SC';
+  font-size: 1.1rem;
+  font-weight: 400;
+  flex: 1;}
+
+.gacha-reward-item:nth-child(1) h2 {
+  text-shadow: 0 0 8px #8f95ca;
+  color: #303033;}
+.gacha-reward-item:nth-child(2) h2 {
+  text-shadow: 0 0 8px #ffaeae;
+  color: #963a3a;}
+.gacha-reward-item:nth-child(3) h2 {
+  text-shadow: 0 0 8px #fffaae;
+  color: #a2a232;}
+.gacha-reward-item:nth-child(4) h2 {
+  text-shadow: 0 0 8px #e0aeff;
+  color: #963a90;}
+
+.gems-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 0;
+  padding: 20px;
+  align-items: center;
+  border-radius: 20px;}
+.gem {
+  border-radius: 50%;
+  opacity: 0;
+  animation: gemAppear 0.5s ease forwards, float 2s ease-in-out infinite;}
+
+.gem-big {
+  width: 30px;
+  height: 30px;
+  animation-delay: 0.1s, 0.5s;}
+.gem-med {
+  width: 25px;
+  height: 25px;
+  animation-delay: 0.2s, 1s;}
+.gem-small {
+  width: 20px;
+  height: 20px;
+  animation-delay: 0.3s, 1.5s;}
+
+.gem-special {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: gemAppear 0.8s ease forwards, pulse 2s ease-in-out infinite;
+  animation-delay: 0.5s, 1s;}
+
+@keyframes gemAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }}
+
+/* SECTION 4 */
+.section-4 {
+  background: linear-gradient(to right, #cfdef0, #e5e9ef);
+  padding: 40px 20px;}
+
+.pogame h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: 'Lexend Deca';
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+  text-align: center;
+  margin-bottom: 40px;}
+
+.mobile-game-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;}
+.mobile-game-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;}
+.mobile-game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);}
+
+.mobile-game-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  gap: 15px;}
+
+.app {
+  width: 45px;
+  height: 45px;
+  border-radius: 25%;
+  border: 1px solid rgba(0, 0, 0, 0.2);}
+
+.mobile-game-title {
+  font-family: 'Lexend Deca';
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex: 1;
+  margin: 0;}
+
+.arrow-icon {
+  color: #666;
+  transition: transform 0.3s ease;}
+.arrow-svg {
+  height: 20px;
+  width: 20px;}
+
+.mobile-game-content {
+  padding: 0 20px 20px;
+  border-top: 1px solid #eee;}
+.mobile-game-content.hidden {
+  display: none;}
+
+.content-text {
+  font-family: 'Nunito Sans';
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 15px;}
+.content-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;}
+
+/* SECTION 6 - STATISTICS */
+.section-6 {
+  background: linear-gradient(225deg, #c0d5ed, #e5e9ef);
+  padding: 40px 20px;}
+
+.stats-title h1 {
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;}
+
+.stats-graphs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;}
+
+.graph-container {
+  max-width: 350px;
+  padding: 20px;
+  border-bottom: 2px dashed rgba(61, 68, 91, 0.454);
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease forwards;}
+
+.graph-container:nth-child(1) { animation-delay: 0.2s; }
+.graph-container:nth-child(2) { animation-delay: 0.4s; }
+.graph-container:nth-child(3) { animation-delay: 0.6s; }
+.graph-container:nth-child(4) { animation-delay: 0.8s; }
+.graph-container:nth-child(5) { animation-delay: 1s; }
+
+/* SECTION 7 - SUMMARY */
+.section-7 {
+  background: #e2e9f2;
+  padding: 40px 20px;
+  text-align: center;}
+
+.summary h1 {
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;}
+
+.forms-intro {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 40px;}
+
+.sum-des {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;}
+
+.sum-des > div {
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);}
+
+.sum-des h2 {
+  font-size: 3rem;
+  color: #231846;
+  margin-bottom: 15px;
+  font-family: 'Lexend Deca';
+  font-weight: 600;}
+
+.sum-des h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #313945;
+  margin: 0;
+  font-family: 'Saira';
+  line-height: 1.4;}
+
+/* SECTION 5 - ADDICTION */
+.section-5 {
+  background: linear-gradient(135deg, #f0f4f9, #e2e9f2);
+  padding: 40px 20px;}
+
+.addict-title {
+  text-align: center;
+  margin-bottom: 40px;}
+.addict-title h1 {
+  font-family: 'Raleway';
+  font-size: 1.8rem;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;}
+
+.addict-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;}
+
+.addict-box {
+  background: linear-gradient(135deg, #ffffff, #f0f4f9);
+  padding: 25px;
+  border: 3px double #8da2ae;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  animation: slideInUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;}
+
+.addict-box:nth-child(1) { animation-delay: 0.2s; }
+.addict-box:nth-child(2) { animation-delay: 0.4s; }
+.addict-box:nth-child(3) { animation-delay: 0.6s; }
+.addict-box:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+
+.addict-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);}
+
+.addict-subtitle {
+  font-family: 'Lexend Deca';
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #2d3748;}
+
+.addict-content {
+  font-family: 'Nunito Sans';
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;}
+
+/* SECTION END */
+.section-end {
+  background: #cfdaeb;
+  padding: 40px 20px;
+  text-align: center;}
+
+.support-us {
+  font-size: 2rem;
+  font-family: "Lexend Deca";
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;}
+
+.sp-des {
+  font-family: 'Nunito Sans';
+  margin-bottom: 30px;}
+
+.sp-des a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;}
+
+.sp-des a:hover {
+  color: #142248;
+  text-decoration: underline;}
+
+.contact {
+  font-family: 'Saira';
+  font-weight: 500;
+  margin-bottom: 30px;}
+
+.contact h1 {
+  font-size: 1rem;
+  margin: 10px 0;}
+
+.contact a {
+  color: rgb(15, 19, 21);
+  font-family: "Nunito Sans";
+  font-size: 0.9rem;
+  text-decoration: none;}
+
+.contact a:hover {
+  color: #333b4f;
+  text-decoration: underline;}
+
+.end-cta {
+  margin-top: 30px;
+margin-left: auto;
+margin-right: auto;}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 480px) {
+  .con2 {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  
+  .title {
+    font-size: 1rem;
+    top: 25%;
+  }
+  
+  .highlight {
+    font-size: 2rem;
+  }
+  
+  .game-cards {
+    bottom: 100px;
+  }
+  
+  .card {
+    width: 40px;
+    height: 40px;
+  }
+  
+  section {
+    padding: 15px;
+  }
+  
+  .sum-des h2 {
+    font-size: 2rem;
+  }
+  
+  .addict-title h1 {
+    font-size: 1.5rem;
+  }
+  
+  .support-us {
+    font-size: 1.5rem;
+  }}
+
+
+
+/* Base styles - elements start hidden */
+.section-2 .vline,
+.section-2 .purpose,
+.section-2 .introduction,
+.section-3 #def,
+.section-3 .gacha-reward-item,
+.section-4 .pogame,
+.section-4 .mobile-game-item,
+.section-6 .stats-title,
+.section-6 .graph-container,
+.section-7 .summary,
+.section-7 .forms-intro,
+.section-7 .sum-des > div,
+.section-5 .addict-title,
+.section-5 .addict-box,
+.section-end .support-us,
+.section-end .sp-des,
+.section-end .contact,
+.section-end .survey-btn {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Section 2 Animations */
+.section-2.loaded .vline {
+  animation: loadAni-slideInLeft 0.8s ease-out 0.1s forwards;}
+
+.section-2.loaded .purpose {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.3s forwards;}
+
+.section-2.loaded .introduction {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.5s forwards;}
+
+/* Section 3 Animations */
+.section-3.loaded #def {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.2s forwards;}
+
+.section-3.loaded .gacha-reward-item:nth-child(1) {
+  animation: loadAni-scaleIn 0.6s ease-out 0.4s forwards;}
+
+.section-3.loaded .gacha-reward-item:nth-child(2) {
+  animation: loadAni-scaleIn 0.6s ease-out 0.6s forwards;}
+
+.section-3.loaded .gacha-reward-item:nth-child(3) {
+  animation: loadAni-scaleIn 0.6s ease-out 0.8s forwards;}
+
+.section-3.loaded .gacha-reward-item:nth-child(4) {
+  animation: loadAni-scaleIn 0.6s ease-out 1s forwards;}
+
+/* Section 4 Animations */
+.section-4.loaded .pogame {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.2s forwards;}
+
+.section-4.loaded .mobile-game-item:nth-child(1) {
+  animation: loadAni-slideInLeft 0.8s ease-out 0.4s forwards;}
+.section-4.loaded .mobile-game-item:nth-child(2) {
+  animation: loadAni-slideInLeft 0.8s ease-out 0.6s forwards;}
+.section-4.loaded .mobile-game-item:nth-child(3) {
+  animation: loadAni-slideInLeft 0.8s ease-out 0.8s forwards;}
+/* Section 6 Animations */
+.section-6.loaded .stats-title {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.2s forwards;}
+.section-6.loaded .graph-container:nth-child(1) {
+  animation: loadAni-scaleIn 0.8s ease-out 0.4s forwards;}
+.section-6.loaded .graph-container:nth-child(2) {
+  animation: loadAni-scaleIn 0.8s ease-out 0.6s forwards;}
+.section-6.loaded .graph-container:nth-child(3) {
+  animation: loadAni-scaleIn 0.8s ease-out 0.8s forwards;}
+.section-6.loaded .graph-container:nth-child(4) {
+  animation: loadAni-scaleIn 0.8s ease-out 1s forwards;}
+.section-6.loaded .graph-container:nth-child(5) {
+  animation: loadAni-scaleIn 0.8s ease-out 1.2s forwards;}
+
+/* Section 7 Animations */
+.section-7.loaded .summary {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.2s forwards;}
+.section-7.loaded .forms-intro {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.4s forwards;}
+.section-7.loaded .sum-des-1 {
+  animation: loadAni-slideInLeft 0.8s ease-out 0.6s forwards;}
+.section-7.loaded .sum-des-2 {
+  animation: loadAni-slideInLeft 0.8s ease-out 0.8s forwards;}
+.section-7.loaded .sum-des-3 {
+  animation: loadAni-slideInLeft 0.8s ease-out 1s forwards;}
+
+/* Section 5 Animations */
+.section-5.loaded .addict-title {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.2s forwards;}
+
+.section-5.loaded .addict-box:nth-child(1) {
+  animation: loadAni-flipIn 0.8s ease-out 0.4s forwards;}
+.section-5.loaded .addict-box:nth-child(2) {
+  animation: loadAni-flipIn 0.8s ease-out 0.6s forwards;}
+.section-5.loaded .addict-box:nth-child(3) {
+  animation: loadAni-flipIn 0.8s ease-out 0.8s forwards;}
+.section-5.loaded .addict-box:nth-child(4) {
+  animation: loadAni-flipIn 0.8s ease-out 1s forwards;}
+
+/* Section End Animations */
+.section-end.loaded .support-us {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.2s forwards;}
+.section-end.loaded .sp-des {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.4s forwards;}
+.section-end.loaded .contact {
+  animation: loadAni-fadeInUp 0.8s ease-out 0.6s forwards;}
+.section-end.loaded .survey-btn {
+  animation: loadAni-bounceIn 0.8s ease-out 0.8s forwards;}
+
+/* Keyframe Animations */
+@keyframes loadAni-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+
+@keyframes loadAni-slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }}
+
+@keyframes loadAni-scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }}
+
+@keyframes loadAni-floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }}
+@keyframes loadAni-flipIn {
+  from {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0);
+  }}
+
+@keyframes loadAni-bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation delays for mobile */
+  .section-2.loaded .vline { animation-delay: 0.05s; }
+  .section-2.loaded .purpose { animation-delay: 0.15s; }
+  .section-2.loaded .introduction { animation-delay: 0.25s; }
+  .section-2.loaded .element1 { animation-delay: 0.35s; }
+  .section-2.loaded .element2 { animation-delay: 0.45s; }
+  .section-2.loaded .element3 { animation-delay: 0.55s; }
+  .section-2.loaded .element4 { animation-delay: 0.65s; }
+  .section-2.loaded .element5 { animation-delay: 0.75s; }
+  
+  /* Reduce transform distances for mobile */
+  @keyframes loadAni-fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes loadAni-slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }}
+
+
+
+  

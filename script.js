@@ -6,6 +6,11 @@ scroll = new LocomotiveScroll({
     smooth: true
   });
 
+// == REDIRECT == //
+if (window.innerWidth < 1024) {
+    window.location.href = "mobile_website.html";
+}
+
 // DROPDOWN MENU
 function setupDropdown(triggerSelector, menuSelector) {
   const section = document.querySelector(triggerSelector);
@@ -104,15 +109,12 @@ document.getElementById("sec5").addEventListener("click", function () {
   });
 });
 document.getElementById("sec6").addEventListener("click", function () {
-  const offset = window.innerHeight * 0.05; // 5svh
-
-  scroll.scrollTo(document.querySelector(".section-6"), {
-    offset: offset,
-    duration: 1800,
-    easing: [0.25, 0.0, 0.35, 1.0]
-  });
+   const offset = window.innerHeight * 0.05; // 5svh 
+scroll.scrollTo(document.querySelector(".section-6"), { 
+  offset: offset, 
+  duration: 1800, 
+  easing: [0.25, 0.0, 0.35, 1.0] }); 
 });
-
 
 //TEXT BOX
 function showContent(id) {
@@ -553,25 +555,6 @@ const solutions = {
 };
 const textEl = document.getElementById("solution-text");
 
-/*window.addEventListener("DOMContentLoaded", () => {
-    textEl.innerHTML = "<p>Click onto each image to see its according solution.</p>";
-});
-
-function showText(text) {
-    if (Array.isArray(text)) text = text[0];
-    textEl.classList.remove("show");
-    void textEl.offsetWidth; // reset animation
-    textEl.textContent = text;
-    textEl.classList.add("show");
-}
-
-document.querySelectorAll(".sol-card").forEach(card => {
-    card.style.setProperty("--hover-color", card.getAttribute("data-color"));
-    card.addEventListener("click", () => {
-        const key = card.getAttribute("data-solution");
-        showText(solutions[key]);
-    });
-});*/
 
 
 

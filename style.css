@@ -1045,24 +1045,22 @@ header h1 {
 
 /*SECTION END*/
 .support-us {
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
   font-size: 3rem;
   font-family: "Lexend Deca";
   font-weight: 600;
-  color: #1f2937; /* Dark text for contrast */
-  margin-top: 2svh;}
+  color: #1f2937;}
 .section-end {
   height: 50svh;
   background: #cfdaeb;
   display: flex;
   flex-direction: column;}
 .sp-des{
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
   font-family: 'Nunito Sans';}
 .contact{
+  top:40%;
+  position: absolute;
   display: flex;
   flex-direction: column;
   font-family: 'Saira';
@@ -1088,8 +1086,14 @@ text-decoration: none;}
 text-decoration: underline;}
 
 .end-cta{
-  position: relative;
   margin-left: auto;
-  margin-right:auto;
-  bottom: 15vh;}
+  margin-right:auto;}
+
+.sp-con{
+  position: relative;
+  display:flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction:column;
+  margin-top: 2svh;}
 
