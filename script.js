@@ -556,8 +556,188 @@ const solutions = {
 const textEl = document.getElementById("solution-text");
 
 
+// Loading Screen JavaScript
+class LoadingScreen {
+    constructor() {
+        this.loadingScreen = document.getElementById('loading-screen');
+        this.mainContent = document.getElementById('content');
+        this.progressFill = document.getElementById('progress-fill');
+        this.loadingText = document.querySelector('.loading-text');
+        
+        this.totalResources = 0;
+        this.loadedResources = 0;
+        this.resourceTypes = ['img', 'link[rel="stylesheet"]', 'script[src]'];
+        
+        this.init();
+    }
 
+    init() {
+        // Don't start checking until DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.startLoading());
+        } else {
+            this.startLoading();
+        }
+    }
 
+    startLoading() {
+        this.collectResources();
+        
+        // If no resources to track, finish immediately
+        if (this.totalResources === 0) {
+            console.log('No resources to track, finishing immediately');
+            this.finishLoading();
+            return;
+        }
+        
+        console.log(`Starting to track ${this.totalResources} resources`);
+        this.trackResourceLoading();
+        
+        // Minimum loading time of 500ms for better UX
+        this.minLoadTime = new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    collectResources() {
+        this.resourceTypes.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                if (this.shouldTrackElement(element)) {
+                    this.totalResources++;
+                }
+            });
+        });
+        
+        console.log(`Tracking ${this.totalResources} resources`);
+    }
+
+    shouldTrackElement(element) {
+        if (element.tagName === 'IMG') {
+            // Only track images that have src and are not yet loaded
+            return element.src && !element.complete;
+        } else if (element.tagName === 'LINK') {
+            // For stylesheets, check if they're already loaded
+            return element.href && element.rel === 'stylesheet' && !element.sheet;
+        } else if (element.tagName === 'SCRIPT') {
+            // Only track external scripts that aren't loaded yet
+            return element.src && !element.readyState;
+        }
+        return false;
+    }
+
+    trackResourceLoading() {
+        this.resourceTypes.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                if (this.shouldTrackElement(element)) {
+                    this.attachLoadListener(element);
+                }
+            });
+        });
+    }
+
+    attachLoadListener(element) {
+        const onLoad = () => {
+            console.log('Resource loaded:', element.src || element.href);
+            this.onResourceLoaded();
+            element.removeEventListener('load', onLoad);
+            element.removeEventListener('error', onError);
+        };
+
+        const onError = () => {
+            console.warn('Resource failed to load:', element.src || element.href);
+            this.onResourceLoaded();
+            element.removeEventListener('load', onLoad);
+            element.removeEventListener('error', onError);
+        };
+
+        // Check if already loaded
+        if (element.tagName === 'IMG') {
+            if (element.complete && element.naturalHeight !== 0) {
+                // Image already loaded successfully
+                setTimeout(() => this.onResourceLoaded(), 0);
+                return;
+            }
+        } else if (element.tagName === 'LINK' && element.sheet) {
+            // Stylesheet already loaded
+            setTimeout(() => this.onResourceLoaded(), 0);
+            return;
+        }
+
+        element.addEventListener('load', onLoad);
+        element.addEventListener('error', onError);
+        
+        // Additional timeout per resource (2 seconds max per resource)
+        setTimeout(() => {
+            if (element.removeEventListener) {
+                element.removeEventListener('load', onLoad);
+                element.removeEventListener('error', onError);
+                console.log('Resource timeout, continuing:', element.src || element.href);
+                this.onResourceLoaded();
+            }
+        }, 2000);
+    }
+
+    onResourceLoaded() {
+        this.loadedResources++;
+        this.updateProgress();
+        
+        if (this.loadedResources >= this.totalResources) {
+            this.finishLoading();
+        }
+    }
+
+    updateProgress() {
+        const progress = this.totalResources > 0 ? 
+            (this.loadedResources / this.totalResources) * 100 : 100;
+        
+        this.progressFill.style.width = `${progress}%`;
+        this.loadingText.textContent = `Loading... ${Math.round(progress)}%`;
+    }
+
+    async finishLoading() {
+        // Wait for minimum load time
+        await this.minLoadTime;
+        
+        // Ensure progress shows 100%
+        this.progressFill.style.width = '100%';
+        this.loadingText.textContent = 'Complete!';
+        
+        // Small delay to show completion
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        // Hide loading screen and show content
+        this.loadingScreen.classList.add('hidden');
+        if (this.mainContent) {
+            this.mainContent.classList.add('visible');
+        }
+        
+        // Remove loading screen from DOM after animation
+        setTimeout(() => {
+            this.loadingScreen.style.display = 'none';
+        }, 500);
+    }
+}
+
+// Initialize the loading screen
+new LoadingScreen();
+
+// Fallback: Force finish loading after 10 seconds
+setTimeout(() => {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('content');
+    
+    if (!loadingScreen.classList.contains('hidden')) {
+        console.log('Fallback: Force finishing loading after timeout');
+        loadingScreen.classList.add('hidden');
+        if (mainContent) {
+            mainContent.classList.add('visible');
+        }
+        
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }
+}, 10000);
 
 
 
