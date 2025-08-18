@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="style.css">
+<!--FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <title>Gachara</title>
+    <link rel="icon" href="../images/logo.png">
+</head>
+
+<body> 
+  
+<!-- Loading Screen HTML - Add this to your page -->
+<div id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading...</div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+    </div>
+</div>
+
+
+<div data-scroll-container id="content" data-scroll data-scroll-speed="0.7">
+    <section class="section-1" 
+    data-scroll-section 
+    data-scroll
+    data-scroll-speed="0">
+        <div class="con1">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <div class="logoname">Gachara</div>
+        </div>
+        <div class="con2">
+          <div class="about" id="about">
+            <h1 href="#" id="sec2-about">ABOUT</h1>
+          </div>
+
+          <div class="xplo" id="xplo">
+            <h1>EXPLORE <span class="triangle">&#9660;</span></h1>
+            <div class="dropdown-menu xplo-menu">
+              <a href="#" id="sec2">Introduction</a>
+              <a href="#" id="sec3">Definitions</a>
+              <a href="#" id="sec4">Examples</a>
+              <a href="#" id="sec6">Statistics</a>
+              <a href="#" id="sec5">Psychology</a>
+            </div>
+          </div>
+
+          <div class="lang" id="lang">
+            <h1>
+              <span class="lang-select">EN</span>
+              <img src="images/uk-flag.png" alt="UK" class="flag">
+              <span class="triangle lang-triangle">&#9660;</span>
+            </h1>
+            <div class="dropdown-menu lang-menu">
+              <a href="vi/index-vi.html">VI <img src="images/vietnam-flag.png" alt="VI" class="flag"></a>
+            </div>
+          </div>
+            <a href="https://forms.gle/LQg2M7uMww4rQUsBA" target="_blank" class="survey-btn right-top-btn">
+              SURVEY NOW
+            </a>
+        </div>
+
+        <div class="title">
+          <span class="highlight">GACHA GAMES</span>Understanding the Psychology
+          <div class="title-des">Raising student awareness of the psychology and risks  
+            behind <strong>Gacha gaming. </strong><br>A knowledge guide to understand <strong>Gacha</strong> addiction.
+          </div>
+          <a href="https://forms.gle/LQg2M7uMww4rQUsBA" target="_blank" class="survey-btn">
+            SURVEY NOW
+          </a>
+        </div>
+
+            <img src="images/pjsk.png" alt="Gacha Game 1" class="card card1">
+            <img src="images/HonkaiST.png" alt="Gacha Game 2" class="card card2">
+            <img src="images/umamusume.png" alt="Gacha Game 3" class="card card3">
+            <img src="images/limbuscompany.png" alt="Gacha Game 4" class="card card4">
+            <img src="images/genshin.png" alt="Gacha Game 5" class="card card5">
+
+        <div class="scroll-indicator">
+            <p>Scroll to explore</p>
+            <div class="arrow"></div>
+        </div> 
+
+
+    </section>
+
+    <section 
+        class="section-2" id="section2"
+        data-scroll
+        data-scroll-section>
+            <div 
+            class="wrap"
+            data-scroll>
+                <div class="vline"></div>
+                <div class="purpose" id="purpose"><h1>INTRODUCTION</h1></div>
+                <div class="introduction" id="introduction">
+                  <p>The goal of the project is to explore the psychology and behavior of high school students when playing gacha games. Based on the results of a recent survey, our team has realised the danger of this practice. To help sustain a healthy digital environment for students, we have developed <strong>GACHARA</strong>, a website that helps students better understand and become more aware of this type of game.</p>
+                </div>
+            </div>
+            <div class="flow-image">
+              <img src="images/element1.webp" alt="element1" class="ele-img element1" data-scroll data-scroll-speed="2">
+              <img src="images/element2.jpg" alt="element2" class="ele-img element2" data-scroll-direction="horizontal" data-scroll data-scroll-speed="-4">
+              <img src="images/element3.webp" alt="element3" class="ele-img element3" data-scroll data-scroll-speed="6">
+              <img src="images/element4.webp" alt="element4" class="ele-img element4" data-scroll data-scroll-direction="horizontal" data-scroll-speed="8">
+              <img src="images/element5.png" alt="element5" class="ele-img element5" data-scroll data-scroll-speed="5">
+            </div>
+    </section>
+
+    <section class="section-3" id="section-3" data-scroll-section>
+        <div 
+        class="catalogue" 
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target=".section-3">
+            <div id="def">
+                <h1 id="head-def">WHAT ARE GACHA GAMES?</h1>
+                <p id="p-def">  
+                    <strong>Gacha games</strong> are a type of video game that has a 
+                    <strong>random reward system</strong> to get 
+                    <em>characters</em>, <em>weapons</em>, or <em>pieces of gear</em>. 
+                    Powerful or rare items usually have a 
+                    <strong>very low drop rate</strong>. To draw gacha, players can use 
+                    <strong>in-game currency</strong> or <strong>real money</strong>. 
+                    <strong>Scroll</strong> to see examples of 
+                    <em>rewards</em> players might receive.</p>
+            </div>
+        <div class="gacha-pic">
+            <div 
+                class="scroll-buttons"
+                data-scroll
+                data-scroll-direction="horizontal"
+                data-scroll-speed="7"
+                data-scroll-offset="30%,-380%"
+                data-scroll-repeat="false">
+                <div style="  
+                    display:flex;
+                    align-items: center;
+                    flex-shrink: 0;
+                    justify-content: center;
+                    width:30svw;"></div>
+                <div class="lenchar"><img src="images/lenchar.png" id="lenchar"><h2>✦ Rare characters ✦</h2></div>
+                <div class="lenwe"><img src="images/lenweapon.png" id="lenwe"><h2>♦ Legendary weapons ♦</h2></div>
+                <div class="lenitem"><img src="images/lenitem.png" id="lenitem"><h2>✧ Mythic items ✧</h2></div>
+                <div class="lenban"><img src="images/lenban.png" id="lenban"><h2>✩ Limited banners ✩</h2></div>
+            </div>
+        </div>
+
+
+        <img src="images/honkaiitem5.png" id="gem-big" class="gem-big" style="top:80vh; left:12vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:78.5vh; left:15vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:79.5vh; left:18vw; position:absolute;">
+        <img src="images/honkaiitem5.png" id="gem-big" class="gem-big" style="top:81vh; left:21vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-small" class="gem-small" style="top:83.2vh; left:24vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:82.8vh; left:27vw; position:absolute;">
+        <img src="images/honkaiitem5.png" id="gem-big" class="gem-big" style="top:81.5vh; left:30vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:79.5vh; left:33vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-small" class="gem-small" style="top:77vh; left:36vw; position:absolute;">
+        <img src="images/honkaiitem5.png" id="gem-big" class="gem-big" style="top:74vh; left:38vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-small" class="gem-small" style="top:72vh; left:40vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:69vh; left:42vw; position:absolute;">
+
+        <img src="images/honkaiitem5.png" id="gem-big" class="gem-big" style="top:70vh; left:6vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:63.75vh; left:6.25vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-small" class="gem-small" style="top:57.5vh; left:6vw; position:absolute;">
+        <img src="images/honkaiitem5.png" id="gem-big" class="gem-big" style="top:51.25vh; left:5.5vw; position:absolute;">
+        <img src="images/genshingem.webp" id="gem-med" class="gem-med" style="top:45vh; left:7vw; position:absolute;">
+
+        <img src="images/honkaiitem5.png" class="honkaiitembig" id="itembig">
+
+
+      </div>
+      <div>
+
+      </div>
+    </section>
+
+    <section class="section-4" data-scroll-section>
+
+    <div class="pogame"
+      data-scroll
+      data-scroll-direction="horizontal"
+      data-scroll-speed="-4">
+        <h1>Popular games</h1>
+    </div>
+
+    <div class="container">
+    <div class="left-column">
+
+      <div class="text-box box-blue" onclick="showContent(1)">
+        <div class="highlight-bar"></div>
+        <h3 class="box-title">Genshin Impact</h3>
+        <div class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+      <div class="text-box box-purple" onclick="showContent(2)">
+        <div class="highlight-bar"></div>
+            <h3 class="box-title">Honkai: Star Rail</h3>
+        <div class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+      <div class="text-box box-green" onclick="showContent(3)">
+        <div class="highlight-bar"></div>
+            <h3 class="box-title">Wuthering Waves</h3>
+            
+        <div class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="content-box box-blue hidden" id="content-1">
+        <div class="title-row">
+          <img src="images/genshin.png" alt="Genshin Impact" class="app">
+          <h2 class="content-title">Genshin Impact</h2>
+        </div>
+        <p class="content-text"><strong>Genshin Impact</strong> is an expansive open-world action RPG developed by <em>HoYoverse</em>. Set in the visually stunning fantasy world of <em>Teyvat</em>, players take on the role of the <strong>Traveler</strong>, with a quest to reunite with their lost sibling while uncovering the secrets of <em>elemental gods</em>. With a rich storyline, diverse characters, and dynamic combat, <em>Genshin Impact</em> offers an immersive experience to players.</p>
+        <img src="images/genshinreview.jpg" alt="Creative" class="content-image" />
+      </div>
+      <div class="content-box box-purple hidden" id="content-2">
+        <div class="title-row">
+          <img src="images/HonkaiST.png" alt="HonkaiST" class="app">
+          <h2 class="content-title">Honkai: Star Rail</h2>
+        </div>
+        <p class="content-text">  <strong>Honkai: Star Rail</strong> is a space fantasy RPG created by <em>HoYoverse</em>, taking players on a journey aboard the <strong>Astral Express</strong>. In a universe shaped by <em>Aeons</em>, players explore planets and uncover mysteries while assembling a team of unique characters with unique abilities. Combining sharp dialogue, cinematic storytelling, and turn-based combat, <em>Star Rail</em> gives players an unforgettable sci-fi adventure.</p>
+        <img src="images/honkaistreview.jpg" alt="Technology" class="content-image" />
+      </div>
+      <div class="content-box box-green hidden" id="content-3">
+        <div class="title-row">
+          <img src="images/Wuthering.webp" alt="Wuthering" class="app">
+          <h2 class="content-title">Wuthering Waves</h2>
+        </div>
+        <p class="content-text"> <strong>Wuthering Waves</strong> is a open-world action RPG developed by <em>Kuro Games</em>. Set in a post-apocalyptic world where humanity fights to reclaim its past, players take on the role of a mysterious warrior awakened from slumber called <strong>Rover</strong>. With fluid combat mechanics, parkour exploration, and a deep lore, <em>Wuthering Waves</em> blends action with emotional storytelling in a world teeming with both beauty and ruin.</p>
+        <img src="images/wutheringreview.jpg" alt="Design" class="content-image" />
+      </div>
+    </div>
+  </div>
+    </section>
+
+
+    <section class="section-6" id="section-6" data-scroll-section>
+      <div class="stats-title">
+        <h1>STATISTICS</h1>
+      </div>
+      <div class="stats-graphs">
+
+      <div class="stats-graphs">
+        <div class="graph-row">
+          <div class="graph-container1"><canvas id="pie1"></canvas></div>
+          <div class="graph-container1 bar1"><canvas id="bar1"></canvas></div>
+          <div class="graph-container1"><canvas id="pie2"></canvas></div>
+        </div>
+        <div class="graph-row">
+          <div class="graph-container2"><canvas id="bar2"></canvas></div>
+          <div class="graph-container2"><canvas id="pie3"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-7" data-scroll-section>
+      <div class="summary"><h1>SUMMARY</h1></div>
+      <div class="forms-intro">The data above is collected by surveying 180 high school students in Cho Quan ward, HCMC</div>
+      <div class="sum-des">
+        <div class="sum-des-1">
+          <h2>38.9%</h2>
+          <h3>Students playing gacha games <strong>over 3 hours daily</strong></h3>
+        </div>
+        <div class="sum-des-2">
+          <h2>~70.5%</h2>
+          <h3>Students who believe gacha games are designed to be <strong>addictive</strong> also feel <strong>addicted</strong> themselves.</h3>
+        </div>
+        <div class="sum-des-3">
+          <h2>56.8%</h2>
+          <h3>Students experienced <strong>FOMO</strong> when playing gacha games</h3>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section-5" id=section-5 data-scroll-section>
+      <div class="addict-line1"></div>
+      <div class="addict-line2"></div>
+      <div class="addict-title">
+        <h1>WHY GACHA GAMES ARE SO ADDICTIVE</h1>
+      </div>
+      <div class="addict-container">
+        <div class="addict-column">
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">Gacha Mechanics</h2>
+              <p class="addict-content">"The next pull will surely get me a <strong>legendary</strong> weapon..."</p>
+            </div>
+          </div>
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">Sunk Cost Fallacy</h2>
+              <p class="addict-content">"I've come too far to <em>stop</em> now."<br>"Throwing good money after bad."</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="addict-column">
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">FOMO (Fear of Missing Out)</h2>
+              <p class="addict-content">"Limited-time only!"<br>"I'll miss the <strong>limited-item</strong> if the event end..."</p>
+            </div>
+          </div>
+
+          <div class="addict-box">
+            <div class="addict-inner">
+              <h2 class="addict-subtitle">Emotions Hooks</h2>
+              <p class="addict-content">"So close to getting my <strong>favorite</strong> character!"<br>"I will get that <strong>5★</strong> no matter what"</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-end" data-scroll data-scroll-section>
+      <div class="sp-con">
+        <div class="support-us">SUPPORT US</div>
+        <div class="sp-des"><a href="https://forms.gle/5NoSLB9opD2fkgaaA">👉By completing this form, you'll help us<br>better understand gacha players' behaviour👈</a></div>
+        <a href="https://forms.gle/LQg2M7uMww4rQUsBA" target="_blank" class="survey-btn end-cta">
+          SURVEY NOW
+        </a>
+      </div>
+      <div class="contact">Contact us
+        <h1><a href="mailto:truongnguyentuankiet09072@gmail.com">truongnguyentuankiet09072@gmail.com</a></h1>
+        <h1><a href="mailto:nguyenbakhoinguyen2009@gmail.com">nguyenbakhoinguyen2009@gmail.com</a></h1>
+      </div>
+
+    </section>
+    <!--<section class="section-8" data-scroll-section>
+      <header>
+        <h1>SOLUTION</h1>
+      </header>
+        <div class="sol-con">
+          <div class="solutions">
+              <div class="sol-1">
+                <div class="sol-card" data-solution="personal" data-color="rgba(255,0,0,0.5)">
+                    <img src="images/student.jpg" alt="Indi">
+                    <span class="label">Individual</span>
+                </div>
+                <div class="sol-card" data-solution="school" data-color="rgba(0,255,0,0.5)">
+                    <img src="images/uni.jpeg" alt="School">
+                    <span class="label">School</span>
+                </div>
+              </div>
+              <div class="sol-1">
+                <div class="sol-card" data-solution="family" data-color="rgba(0,0,255,0.5)">
+                    <img src="images/family.jpg" alt="Family">
+                    <span class="label">Family</span>
+                </div>
+                <div class="sol-card" data-solution="social" data-color="rgba(255,255,0,0.5)">
+                    <img src="images/society.webp" alt="Society">
+                    <span class="label">Society</span>
+                </div>
+              </div>
+          </div>
+
+          <div class="subtitle-container">
+              <div class="sol-subtitle">SOLUTION</div>
+              <div id="solution-text" class="solution-text">
+                  <p>CLICK TO SEE EACH SOLUTION ACCORDINGLY</p>
+              </div>
+          </div>
+        </div>
+    </section> -->
+</div>
+    <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
