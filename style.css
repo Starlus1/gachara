@@ -92,6 +92,7 @@ h1{
   max-height: 500px;
   opacity: 1;
   padding: 13px 10px;
+  width:max-content;
   pointer-events: auto;}
 
 .dropdown-menu a,
@@ -877,9 +878,9 @@ background: linear-gradient(to right, #cfdef0, #e5e9ef);}
   opacity: 1;
   transform: translateY(0);}
 
-.bar1 {
+.bar1, .bar2 {
   width: 350px;
-  height: 300px;
+  height: 350px;
   border-radius: 12px;
   padding: 1rem;
   font-family: 'Nunito Sans';
