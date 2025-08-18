@@ -357,7 +357,7 @@ const bar1Data = {
       },
        title: {
         display: true,
-        text: 'Mối quan hệ giữa niềm tin về thiết kế gacha và cảm giác nghiện'
+        text: 'Liên kết giữa niềm tin về thiết kế gacha và cảm giác nghiện'
         ,font: {
         size: 16
       }

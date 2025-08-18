@@ -509,7 +509,7 @@ new Chart(document.getElementById('bar2'), {
       },
       title: {
         display: true,
-        text: 'Mối quan hệ giữa niềm tin về thiết kế gacha và cảm giác nghiện'
+        text: 'Liên kết giữa niềm tin về thiết kế gacha và cảm giác nghiện'
         ,font: {
         size: 16
       }
